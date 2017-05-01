@@ -11,5 +11,6 @@
 enter the name:<input name="name" type="text">
 <input type="submit" name="submit">
 </form>
+${message }
 </body>
 </html>

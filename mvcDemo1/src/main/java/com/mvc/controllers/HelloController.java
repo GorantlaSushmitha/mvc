@@ -7,26 +7,37 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//<bean id="helloController" class="com.niit.controllers.HelloController"></bean>
-public class HelloController {
+public class HelloController 
+{
    @RequestMapping("/hello")
-	public String helloPage(){
+	public String helloPage()
+   {
 		return "helloPage";
 	}
 	@RequestMapping("/welcome")
-	public String welcome(){
+	public String welcome()
+	{
 		return "welcomePage";
 	}
 	@RequestMapping("/getUserForm")
-	public String getUserForm() {
+	public String getUserForm() 
+	{
 		return "sayHelloToUser";
 		
 	}
 	
 	@RequestMapping("/helloUser")
-	public String sayHelloToUser(HttpServletRequest request,Model model){
+	public String sayHelloToUser(HttpServletRequest request,Model model)
+	{
 		String name=request.getParameter("name");
 		model.addAttribute("message","welcom"+name);
 		return "welcomePage";
+	}
+	
+	
+	@RequestMapping("/c")
+	public String personForm()
+	{
+		return "presonform";
 	}
 }
