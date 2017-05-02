@@ -9,17 +9,16 @@ import com.mvc.model.Person;
 @Controller
 public class PersonController 
 {
-	
 	@RequestMapping("/personForm")
 	public String getPersonForm(Model model)
 	{
 		model.addAttribute("personObj",new Person());
 		return "personform";
 	}
-	    
+	@RequestMapping("/processPersonDetails")
     public String getPersonDetails(@ModelAttribute(value="personObj")  Person person,Model model)
     {
-    	model.addAttribute("personObj",person);
+    	model.addAttribute("person",person);
     	return "persondetails";	    	
 	}
 }
