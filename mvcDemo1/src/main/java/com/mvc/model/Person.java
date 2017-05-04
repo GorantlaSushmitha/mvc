@@ -1,11 +1,19 @@
 package com.mvc.model;
 
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+///if table name and class name is not equal then we use @Table(name="Name for table")
+@Table
 public class Person 
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int personId;
 	private String firstname;
 	private String lastname;
 	private String email;
@@ -33,5 +41,11 @@ public class Person
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public int getPersonId() {
+		return personId;
+	}
+	public void setPersonId(int personId) {
+		this.personId = personId;
 	}
 }
