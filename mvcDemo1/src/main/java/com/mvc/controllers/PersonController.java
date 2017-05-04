@@ -16,7 +16,7 @@ public class PersonController
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping("/")
+	@RequestMapping("/personForm")
 	public String getPersonForm(Model model)
 	{
 		model.addAttribute("personObj",new Person());
